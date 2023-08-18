@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/shared/core/network_settings/network_settings.dart';
 import 'package:flutter_application_1/src/shared/core/routers/routers.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get_it/get_it.dart';
 
 class AppModule extends StatefulWidget {
@@ -39,6 +40,12 @@ class _AppModuleState extends State<AppModule> {
       title: "Teste",
       routes: routers,
       initialRoute: '/home',
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: const [Locale('pt', 'BR')],
     );
   }
 }
