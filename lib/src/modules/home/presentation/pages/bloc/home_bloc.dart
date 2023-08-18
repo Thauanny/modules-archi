@@ -1,4 +1,4 @@
-import 'package:flutter_application_1/src/modules/home/domain/usecases/example.dart';
+import 'package:flutter_application_1/src/modules/home/domain/usecases/example_use_case.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_application_1/src/modules/home/presentation/pages/bloc/home_event.dart';
 import 'package:flutter_application_1/src/modules/home/presentation/pages/bloc/home_state.dart';
