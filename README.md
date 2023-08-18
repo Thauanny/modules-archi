@@ -1,6 +1,6 @@
 # flutter_application_1
 
-Projeto examplo para fins de sugestão de modelo arquitetural escalavel utilizando clean architecture e design system proprio com arquitetura proposta no seguinte link: https://github.com/Thauanny/view-archi
+Projeto examplo para fins de sugestão de modelo arquitetural escalável utilizando clean architecture e design system proprio com arquitetura proposta no seguinte link: https://github.com/Thauanny/view-archi
 
 ## desenho da arquitetura final
 
