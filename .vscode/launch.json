@@ -45,6 +45,16 @@
                 "--dart-define=ENV_LAUNCH=local"
             ],
             "flutterMode": "release"
+        },
+
+        {
+            "name": "view - example",
+            "request": "launch",
+            "type": "dart",
+            "program": "view-archi/view_example/example/lib/main.dart",
+            "console": "debugConsole",
+
         }
     ]
+    
 }

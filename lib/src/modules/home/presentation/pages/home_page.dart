@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/src/modules/home/data/repository/home_repository.dart';
+import 'package:flutter_application_1/src/modules/home/domain/repository/home_repository.dart';
 import 'package:flutter_application_1/src/modules/home/home_module.dart';
 import 'package:get_it/get_it.dart';
 
@@ -40,7 +40,7 @@ class _MyHomePageState extends HomeModule<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          print(await homeRepository.teste());
+          print(await homeRepository.example());
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
