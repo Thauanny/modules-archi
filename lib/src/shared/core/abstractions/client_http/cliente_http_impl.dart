@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_application_1/src/shared/core/abstractions/client_http/cliente_http.dart';
+import 'package:flutter_application_1/src/shared/core/abstractions/client_http/cliente_response.dart';
 
-import 'package:flutter_application_1/src/shared/core/client_http/cliente_http.dart';
-import 'package:flutter_application_1/src/shared/core/client_http/cliente_response.dart';
 import 'package:flutter_application_1/src/shared/helpers/debug_print/debug_print.dart';
 
 class ClienteHttpImpl implements ClientHttp {

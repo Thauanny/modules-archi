@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app_module.dart';
-import 'package:flutter_application_1/src/shared/core/env/env.dart';
+import 'package:flutter_application_1/src/shared/core/environment/env_variables/env.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

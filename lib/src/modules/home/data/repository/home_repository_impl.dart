@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_application_1/src/modules/home/data/datasources/impl/home_remote_datasource.dart';
 import 'package:flutter_application_1/src/modules/home/domain/repository/home_repository.dart';
-import 'package:flutter_application_1/src/shared/core/network_settings/network_settings.dart';
+import 'package:flutter_application_1/src/shared/core/abstractions/network_settings/network_settings.dart';
 
 import '../datasources/impl/home_local_datasource.dart';
 

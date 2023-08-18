@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/src/shared/core/client_http/cliente_http.dart';
-import 'package:flutter_application_1/src/shared/core/client_http/cliente_http_impl.dart';
-import 'package:flutter_application_1/src/shared/core/network_settings/network_settings.dart';
-import 'package:flutter_application_1/src/shared/core/routers/routers.dart';
+import 'package:flutter_application_1/src/shared/core/abstractions/client_http/cliente_http.dart';
+import 'package:flutter_application_1/src/shared/core/abstractions/client_http/cliente_http_impl.dart';
+import 'package:flutter_application_1/src/shared/core/abstractions/network_settings/network_settings.dart';
+import 'package:flutter_application_1/src/shared/core/environment/routers/routers.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get_it/get_it.dart';
 

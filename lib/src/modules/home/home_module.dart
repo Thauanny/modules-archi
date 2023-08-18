@@ -5,7 +5,7 @@ import 'package:flutter_application_1/src/modules/home/domain/repository/home_re
 import 'package:flutter_application_1/src/modules/home/data/repository/home_repository_impl.dart';
 import 'package:flutter_application_1/src/modules/home/domain/usecases/example_use_case.dart';
 import 'package:flutter_application_1/src/modules/home/presentation/pages/bloc/home_bloc.dart';
-import 'package:flutter_application_1/src/shared/core/network_settings/network_settings.dart';
+import 'package:flutter_application_1/src/shared/core/abstractions/network_settings/network_settings.dart';
 import 'package:get_it/get_it.dart';
 
 abstract class HomeModule<T extends StatefulWidget> extends State<T> {
