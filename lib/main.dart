@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app_module.dart';
-import 'package:flutter_application_1/src/shared/core/abstractions/local_storage/impl/local_storage_impl.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:flutter_application_1/src/shared/core/environment/env_variables/env.dart';
 import 'package:shared_preferences/shared_preferences.dart';
