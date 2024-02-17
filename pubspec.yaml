@@ -31,8 +31,8 @@ dependencies:
   flutter:
     sdk: flutter
   #especifico web
-  #flutter_web_plugins:
-   # sdk: flutter
+  flutter_web_plugins:
+   sdk: flutter
   view:
     path: view-archi/view
   cupertino_icons: ^1.0.2

@@ -6,6 +6,18 @@ Projeto examplo para fins de sugestão de modelo arquitetural escalável utiliza
 
 ![arquitetura_mobile_clean_arch drawio](https://github.com/Thauanny/modules-archi/assets/44787914/6978516b-de61-4afe-ba31-2d6ca3f1f711)
 
+## Flutter Version
+
+Flutter 3.16.9 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 41456452f2 (3 weeks ago) • 2024-01-25 10:06:23 -0800
+Engine • revision f40e976bed
+Tools • Dart 3.2.6 • DevTools 2.28.5
+
+
+## Flutter Web vs Flutter Mobile
+Se buildando para web e mobile, usar o import ``import 'package:flutter_web_plugins/url_strategy.dart';`` com a função ``setUrlStrategy(PathUrlStrategy());``
+Dessa forma não tera problema com o kit web no mobile. Caso nao utilize essa estrategia o projeto nao buildará para mobile.
+
 
 
 ## Firebase configuration
