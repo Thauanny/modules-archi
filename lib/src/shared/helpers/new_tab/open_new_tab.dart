@@ -1,4 +1,9 @@
-import 'dart:html' as html;
+import 'package:url_launcher/url_launcher.dart';
 
-openInNewTab({required String url, required fileName}) =>
-    html.window.open(url, fileName);
+void abrirURL(Uri uri) async {
+  if (await canLaunchUrl(uri)) {
+    await launchUrl(uri);
+  } else {
+    throw 'Não foi possível abrir a URL: $uri';
+  }
+}

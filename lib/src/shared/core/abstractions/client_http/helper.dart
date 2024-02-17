@@ -1,5 +1,8 @@
-import 'dart:html' as html;
+import 'package:flutter/material.dart';
 
 void handlerExpiredAcessToken() {
-  html.window.open('/', '_self');
+  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
+  navigatorKey.currentState?.popUntil((route) => route.isFirst);
+  navigatorKey.currentState?.pushReplacementNamed("/home");
 }

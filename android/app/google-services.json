@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "163437078198",
+    "project_id": "crud-archi",
+    "storage_bucket": "crud-archi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163437078198:android:70ecc546e88f163a7d6817",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvjrcM9YXIumStii9-ef47_Me2EEBQXUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
