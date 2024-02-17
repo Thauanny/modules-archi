@@ -1,0 +1,2 @@
+const SMALLLAYOUT = 600;
+const MEDIUMLAYOUT = 950;

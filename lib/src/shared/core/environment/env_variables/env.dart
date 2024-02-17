@@ -1,12 +1,12 @@
 class Env {
   static Map<String, String> map = {
-    'ENV': const String.fromEnvironment('ENV', defaultValue: "local"),
-    'ENV_LAUNCH': const String.fromEnvironment('ENV_LAUNCH', defaultValue: ""),
+    'ENV': const String.fromEnvironment('ENV', defaultValue: "dev"),
     'BASE_URL': const String.fromEnvironment('BASE_URL', defaultValue: ""),
-    'PREFIXO': const String.fromEnvironment('PREFIXO', defaultValue: ""),
+    'BASE_URL_SUFIXO':
+        const String.fromEnvironment('BASE_URL_SUFIXO', defaultValue: ""),
   };
 
-  static get(String key) => _load(map[key]);
+  static get(String key) => _load(map[key] ?? "");
 
   static String? _load(String? env) => env;
 }

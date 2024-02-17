@@ -1,0 +1,1 @@
+const CELLPHONESIZE = 15;

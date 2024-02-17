@@ -24,3 +24,8 @@ class HmlSettingsNetwork extends NetworkSettings {
   @override
   String get repository => "remote";
 }
+
+class PrdSettingsNetwork extends NetworkSettings {
+  @override
+  String get repository => "remote";
+}

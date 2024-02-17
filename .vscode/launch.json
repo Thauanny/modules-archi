@@ -5,14 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "flutter_application_1 - local",
+            "name": "flutter_application_1 - mock",
             "request": "launch",
             "type": "dart",
             "program": "lib/main.dart",
             "console": "debugConsole",
-            "args": [
-                "--dart-define=ENV_LAUNCH=local"
-            ],
+            "args": [],
         },
         {
             "name": "flutter_application_1 - remote",
@@ -21,7 +19,9 @@
             "program": "lib/main.dart",
             "console": "debugConsole",
             "args": [
-                "--dart-define-from-file=env.json"
+                "--dart-define=ENV=hml",
+                "--dart-define=BASE_URL=_",
+                "--dart-define=BASE_URL_SUFIXO=_"
             ],
         },
         {
@@ -31,7 +31,9 @@
             "program": "lib/main.dart",
             "console": "debugConsole",
             "args": [
-                "--dart-define-from-file=env.json"
+                "--dart-define=ENV=hml",
+                "--dart-define=BASE_URL=_",
+                "--dart-define=BASE_URL_SUFIXO=_"
             ],
             "flutterMode": "release"
         },
@@ -41,9 +43,7 @@
             "type": "dart",
             "program": "lib/main.dart",
             "console": "debugConsole",
-            "args": [
-                "--dart-define=ENV_LAUNCH=local"
-            ],
+            "args": [],
             "flutterMode": "release"
         },
 

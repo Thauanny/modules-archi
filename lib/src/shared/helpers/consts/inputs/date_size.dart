@@ -1,0 +1,1 @@
+const DATESIZE = 10;
