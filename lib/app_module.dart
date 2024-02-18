@@ -2,8 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/shared/core/abstractions/client_http/cliente_http.dart';
 import 'package:flutter_application_1/src/shared/core/abstractions/client_http/impl/cliente_http_impl.dart';
-import 'package:flutter_application_1/src/shared/core/abstractions/firebase/firebase_service.dart';
-import 'package:flutter_application_1/src/shared/core/abstractions/firebase/impl/firebase_service_impl.dart';
 import 'package:flutter_application_1/src/shared/core/abstractions/local_storage/impl/local_storage_impl.dart';
 import 'package:flutter_application_1/src/shared/core/abstractions/network_settings/network_settings.dart';
 import 'package:flutter_application_1/src/shared/core/environment/routers/routers.dart';
@@ -27,9 +25,7 @@ class AppModule extends StatefulWidget {
     GetIt.I.registerSingleton<NetworkSettings>(
       _networkSettings(env),
     );
-    GetIt.I.registerSingleton<FirebaseService>(
-      FirebaseServiceImpl(),
-    );
+
     GetIt.I.registerSingleton<ClientHttp>(
       ClienteHttpImpl(
         clienteHttp: Dio(),
@@ -78,7 +74,6 @@ class _AppModuleState extends State<AppModule> {
   @override
   void dispose() {
     GetIt.I.unregister<ClientHttp>();
-    GetIt.I.unregister<FirebaseService>();
     GetIt.I.unregister<NetworkSettings>();
     super.dispose();
   }
