@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_application_1/src/shared/core/abstractions/client_http/cliente_http.dart';
-import 'package:flutter_application_1/src/shared/core/abstractions/client_http/cliente_response.dart';
-import 'package:flutter_application_1/src/shared/core/abstractions/client_http/helper.dart';
+import 'package:flutter_application_1/src/shared/core/abstractions/client_http/model/cliente_response.dart';
 import 'package:flutter_application_1/src/shared/core/abstractions/local_storage/local_storage.dart';
 import 'package:flutter_application_1/src/shared/core/abstractions/local_storage/storage_key_type/storage_key_type.dart';
+import 'package:flutter_application_1/src/shared/core/environment/routers/routers.dart';
 
 import 'package:flutter_application_1/src/shared/helpers/debug_print/debug_print.dart';
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/modules/home/domain/repository/home_repository.dart';
 import 'package:flutter_application_1/src/modules/home/home_module.dart';
+import 'package:flutter_application_1/src/shared/core/abstractions/firebase/firebase_service.dart';
 import 'package:flutter_application_1/src/shared/helpers/extensions/mask_factory.dart';
 import 'package:get_it/get_it.dart';
 
@@ -12,53 +13,104 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends HomeModule<MyHomePage> {
-  late final HomeRepository homeRepository;
   final cpfMask = TextEditingController().cpf();
   final cellphonMask = TextEditingController().cellphone();
   final moneyMask = TextEditingController().money();
+
   @override
   void initState() {
     super.initState();
-    homeRepository = GetIt.I.get<HomeRepository>();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('widget.title'),
+        title: const Text('Mostruário de testes'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              'teste',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            TextField(
-              controller: cpfMask,
-            ),
-            TextField(
-              controller: cellphonMask,
-            ),
-            TextField(
-              controller: moneyMask,
-            )
-          ],
+      body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 56, vertical: 16),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Adicione no Firebase',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              TextField(
+                controller: cpfMask,
+              ),
+              TextField(
+                controller: cellphonMask,
+              ),
+              TextField(
+                controller: moneyMask,
+              )
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          print(cpfMask.unmaskedValue());
-          print(cellphonMask.unmaskedValue());
-          print(moneyMask.unmaskedToCurrency());
+          var result = await Future.wait([
+            GetIt.I.get<FirebaseService>().add(
+                  key: 'cpf_example',
+                  value: cpfMask.unmaskedValue(),
+                ),
+            GetIt.I.get<FirebaseService>().add(
+                  key: 'cellphone_example',
+                  value: cellphonMask.unmaskedValue(),
+                ),
+            GetIt.I.get<FirebaseService>().add(
+                  key: 'money_example',
+                  value: moneyMask.unmaskedToCurrency().toString(),
+                ),
+          ]);
+
+          int successful = 0;
+          List<String> keys = [];
+
+          for (var element in result) {
+            if (element.uploaded) {
+              successful++;
+            } else {
+              successful--;
+              keys.add(element.key);
+            }
+          }
+
+          if (successful == result.length) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(
+                  'Todos os dados foram adicionados com sucesso!',
+                ),
+                backgroundColor: Colors.green[900],
+              ),
+            );
+          } else if (successful == 0 || successful == -result.length) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(
+                  'Nenhum dado foi adicionado com sucesso.',
+                ),
+                backgroundColor: Colors.red[900],
+              ),
+            );
+          } else {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(
+                  'Alguns elementos nao foram adicionados com sucesso: ${keys.map((e) => e).toList()}.',
+                ),
+                backgroundColor: Colors.yellow[900],
+              ),
+            );
+          }
         },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        tooltip: 'add',
+        child: const Icon(Icons.check),
       ),
     );
   }

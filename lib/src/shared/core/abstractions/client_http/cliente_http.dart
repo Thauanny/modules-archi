@@ -1,4 +1,4 @@
-import 'package:flutter_application_1/src/shared/core/abstractions/client_http/cliente_response.dart';
+import 'package:flutter_application_1/src/shared/core/abstractions/client_http/model/cliente_response.dart';
 
 abstract class ClientHttp {
   Future<ClienteResponse> get({
