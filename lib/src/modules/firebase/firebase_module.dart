@@ -3,15 +3,26 @@ import 'package:flutter_application_1/src/shared/core/abstractions/firebase/fire
 import 'package:flutter_application_1/src/shared/core/abstractions/firebase/firestore/impl/firebase_firestore_facade_impl.dart';
 import 'package:get_it/get_it.dart';
 
-abstract class FirebaseModule<T extends StatefulWidget> extends State<T> {
-  FirebaseModule() {
+class FirebaseModule extends StatefulWidget {
+  FirebaseModule({super.key}) {
     GetIt.I.registerSingleton<FirebaseFireStoreFacade>(
       FirebaseFireStoreFacadeImpl(),
     );
   }
+
+  @override
+  State<FirebaseModule> createState() => _FirebaseModuleState();
+}
+
+class _FirebaseModuleState extends State<FirebaseModule> {
   @override
   void dispose() {
     GetIt.I.unregister<FirebaseFireStoreFacade>();
     super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }

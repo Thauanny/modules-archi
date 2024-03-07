@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/src/modules/firebase/presentation/pages/firebase_page.dart';
+import 'package:flutter_application_1/src/modules/firebase/firebase_module.dart';
+import 'package:flutter_application_1/src/modules/home/home_module.dart';
 import 'package:flutter_application_1/src/modules/home/presentation/pages/home_page.dart';
+import 'package:flutter_application_1/src/shared/helpers/open_url/open_url.dart';
 
 final routers = {
-  '/home': (context) => const MyHomePage(),
-  '/createFirebase': (context) => const FirebasePage()
+  '/home': (context) => HomeModule(),
+  '/createFirebase': (context) => FirebaseModule()
 };
 
 void backToHome({required BuildContext ctx, Object? args}) {
@@ -19,8 +21,10 @@ Route<dynamic>? Function(RouteSettings)? onUnknownRoute() =>
         );
 
 void handlerExpiredAcessToken() {
-  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-
-  navigatorKey.currentState?.popUntil((route) => route.isFirst);
-  navigatorKey.currentState?.pushReplacementNamed("/home");
+  openUrl(
+    Uri.parse(
+      Uri.base.toString(),
+    ),
+    newTab: false,
+  );
 }

@@ -5,11 +5,12 @@ import 'package:flutter_application_1/src/modules/home/domain/repository/home_re
 import 'package:flutter_application_1/src/modules/home/data/repository/home_repository_impl.dart';
 import 'package:flutter_application_1/src/modules/home/domain/usecases/example_use_case.dart';
 import 'package:flutter_application_1/src/modules/home/presentation/pages/bloc/home_bloc.dart';
+import 'package:flutter_application_1/src/modules/home/presentation/pages/home_page.dart';
 import 'package:flutter_application_1/src/shared/core/abstractions/network_settings/network_settings.dart';
 import 'package:get_it/get_it.dart';
 
-abstract class HomeModule<T extends StatefulWidget> extends State<T> {
-  HomeModule() {
+class HomeModule extends StatefulWidget {
+  HomeModule({super.key}) {
     //DATASOURCERS
     //local
     GetIt.I.registerSingleton<HomeLocalDataSource>(
@@ -42,6 +43,12 @@ abstract class HomeModule<T extends StatefulWidget> extends State<T> {
       ),
     );
   }
+
+  @override
+  State<HomeModule> createState() => _HomeModuleState();
+}
+
+class _HomeModuleState extends State<HomeModule> {
   @override
   void dispose() {
     GetIt.I.unregister<HomeLocalDataSource>();
@@ -50,5 +57,10 @@ abstract class HomeModule<T extends StatefulWidget> extends State<T> {
     GetIt.I.unregister<ExampleUseCase>();
     GetIt.I.unregister<HomeBloc>();
     super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const MyHomePage();
   }
 }

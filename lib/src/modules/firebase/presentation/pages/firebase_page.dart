@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/src/modules/firebase/firebase_module.dart';
 import 'package:flutter_application_1/src/shared/core/abstractions/firebase/firestore/firebase_firestore_facade.dart';
 import 'package:flutter_application_1/src/shared/core/abstractions/firebase/firestore/model/firebase_response.dart';
 import 'package:flutter_application_1/src/shared/helpers/extensions/mask_factory.dart';
@@ -12,7 +11,7 @@ class FirebasePage extends StatefulWidget {
   State<FirebasePage> createState() => _FirebasePageState();
 }
 
-class _FirebasePageState extends FirebaseModule<FirebasePage> {
+class _FirebasePageState extends State<FirebasePage> {
   final cpfMask = TextEditingController().cpf();
   final cellphonMask = TextEditingController().cellphone();
   final moneyMask = TextEditingController().money();
@@ -109,7 +108,7 @@ class _FirebasePageState extends FirebaseModule<FirebasePage> {
                         if (successful == result.length) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
-                              content: Text(
+                              content: const Text(
                                 'Todos os dados foram adicionados com sucesso!',
                               ),
                               backgroundColor: Colors.green[900],
@@ -119,7 +118,7 @@ class _FirebasePageState extends FirebaseModule<FirebasePage> {
                             successful == -result.length) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
-                              content: Text(
+                              content: const Text(
                                 'Nenhum dado foi adicionado com sucesso.',
                               ),
                               backgroundColor: Colors.red[900],

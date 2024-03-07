@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/src/shared/helpers/extensions/validators/remover_simbolos.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 
 extension MaskFactory on TextEditingController {
@@ -22,12 +23,15 @@ extension MaskFactory on TextEditingController {
   }
 
   String unmaskedValue() {
-    return text.replaceAll(RegExp(r'[^\d]'), '');
+    return text.removeSymbols();
   }
 
   double unmaskedToCurrency() {
     return double.tryParse(
-            text.replaceAll(RegExp(r'[^\d,]'), '').replaceAll(',', '.')) ??
+          text.removeSpecificSymbols(
+            regex: RegExp(r'[^\d,]'),
+          ),
+        ) ??
         0;
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/src/modules/home/home_module.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -8,7 +7,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends HomeModule<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
@@ -38,7 +37,7 @@ class _MyHomePageState extends HomeModule<MyHomePage> {
                   onPressed: () async {
                     Navigator.pushNamed(context, '/createFirebase');
                   },
-                  child: Text('Firebase'),
+                  child: const Text('Firebase'),
                 ),
               )
             ],

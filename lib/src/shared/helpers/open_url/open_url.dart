@@ -1,8 +1,8 @@
 import 'package:url_launcher/url_launcher.dart';
 
-void abrirURL(Uri uri) async {
+void openUrl(Uri uri, {bool newTab = true}) async {
   if (await canLaunchUrl(uri)) {
-    await launchUrl(uri);
+    await launchUrl(uri, webOnlyWindowName: newTab ? '_blank' : '_self');
   } else {
     throw 'Não foi possível abrir a URL: $uri';
   }
